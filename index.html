@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="herbert souza"/>
+    <meta name="description" content="Tic Tac Gamer um jogo da velha na web onde você é capas de jogar com outros playes e jogar contra a maquina, está na versão Beta e novas funcionalidades será desenvolvidas, venha se divertir com sua familia e amigos Tic Tac o jogo da velha que você não se esquecerar." />
+    <meta name="keyword" content="jogo da velha, joga da velha na web, tic tac gamer, herbert souza, projeto velha, jogos na web, jogo de graça, jogo na web de graça, jogo online na web" />
+    <meta name="robots" content="index follow" />
+    
+    <title>Tic Tac Toe Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <!-- section que aparece todo o começo de partida -->
+        <section class="Card_Start" id="Container-Start">
+            <div>
+                <button id="btn-Module-cpu">New gamer (vs cpu)</button>
+                <button id="btn-Module-player">New gamer (vs player)</button>
+            </div>
+        </section>
+        <!-- section onde aparecerá o tabuleiro -->
+        <section class="none" id="tabuleiro">
+            <!-- Card Mensagem aparece todo final de partida -->
+            <div class="none" id="mensagem-fim">  
+            </div>
+            <!-- card controlle onde fica os botões capazes de manipular o jogo e finalizar a partida -->
+            <div class="card_controll">
+                
+                <div class="box_jogadores">
+                    <span>X</span>
+                    <span>O</span>
+                </div>
+
+                <div class="btn_turn">
+                    <button><span>X</span>Turn</button>
+                </div>
+
+                <div class="btn_reset">
+                    <button id="btn_resetJogo">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z" />
+                            <path
+                                d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- tabuleiro -->
+            <div class="container_tabuleiro">
+                <div class="column">
+                    <button id="0" class="btn_casa" onclick="HandlerJogada(0)"></button>
+                    <button id="1" class="btn_casa" onclick="HandlerJogada(1)"></button>
+                    <button id="2" class="btn_casa" onclick="HandlerJogada(2)"></button>
+                </div>
+                <div class="column">
+                    <button id="3" class="btn_casa" onclick="HandlerJogada(3)"></button>
+                    <button id="4" class="btn_casa" onclick="HandlerJogada(4)"></button>
+                    <button id="5" class="btn_casa" onclick="HandlerJogada(5)"></button>
+                </div>
+                <div class="column">
+                    <button id="6" class="btn_casa" onclick="HandlerJogada(6)"></button>
+                    <button id="7" class="btn_casa" onclick="HandlerJogada(7)"></button>
+                    <button id="8" class="btn_casa" onclick="HandlerJogada(8)"></button>
+                </div>
+            </div>
+            <!-- placar da partida com time -->
+            <div class="card_placar">
+                <div class="placar_jogador">
+                    <p><span>X</span> (you)</p>
+                    <span class="pontos" id="pontoX">0</span>
+                </div>
+                <div class="placar_time">
+                    <p id="time">0</p>
+                </div>
+                <div class="placar_cpu">
+                    <p> o (cpu)</p>
+                    <span class="pontos" id="pontoo">0</span>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>

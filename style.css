@@ -1,0 +1,176 @@
+*{  box-sizing: border-box;  margin: 0;  padding: 0;}
+/* Cor utilizada no projeto */
+:root{
+    --background: #283f49;
+    --btn_casa: rgb(42, 85, 99);
+    --hoki: #627C86;
+    --bakleva: #f2b337;
+    --maximun-blue-green: rgb(49, 196, 190);
+    --winter-sky: rgb(168, 190, 201);
+    --white: #fff;
+}
+/* classe global */
+.none{  display: none;}
+/* Card_Start */
+.Card_Start{
+    height: 100vh;
+    width: 100%;
+    /* alinha os elementos no centro */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* definindo a cor de fundo */
+    background-color: var(--background);
+}
+.Card_Start div{  display: flex;   flex-direction: column;   gap: 10px;}
+
+.Card_Start div button{ width: 300px;}
+
+/* CSS do card mensagem */
+.card_mensagem{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    /* efeito de fundo da box mensagem */
+    background: #486b796b;
+    /* alinhando os elementos no centro */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box_mensagem{
+    width: 100%;
+    background: #283f49;
+    color: var(--white);
+    padding-block: 20px;
+    /* alinhando os elementos no centro */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* colocando todo o texto em caixar alta */
+    text-transform: uppercase;
+}
+.box_mensagem p{  font: 600 18px 'Arial';   padding-block: 14px;   color: var(--winter-sky);}
+
+.box_mensagem h2{   font: 700 40px 'Arial';    padding-block: 14px;    color: var(--maximun-blue-green);}
+
+.jogador_win{font: 800 50px 'Arial'; margin-right: 10px; color: #f2b337;}
+/* duas classes de bottoes uma para botão do jogo e a outra para o card start se encontra aqui */
+.box_mensagem button, .Card_Start div button{
+    /* deixar o texto dentro do botão em caixa alta */
+    text-transform: uppercase;
+    color: var(--background);
+    font: 600 16px 'Arial';
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    margin-block: 10px;
+}
+/* duas classes de bottoes uma para botão do jogo e a outra para o card start se encontra aqui */
+.box_mensagem button:nth-child(1), .Card_Start div button:nth-child(2){
+    margin-right: 10px;
+    background: var(--winter-sky);
+    box-shadow: 2px 4px 2px var(--hoki);
+}
+/* duas classes de bottoes uma para botão do jogo e a outra para o card start se encontra aqui */
+.box_mensagem button:nth-child(2), .Card_Start div button:nth-child(1){  background: var(--bakleva);  box-shadow: 2px 5px 2px #b97e09;}
+/* ao clicar o efeito de fundo sairar */
+.box_mensagem button:active, .Card_Start div button:active{    box-shadow: 0px 0px;}
+/* CSS do tabuleiro com as casas*/
+.tabuleiro{
+    height: 100vh;
+    width: 100%;
+    background-color: var(--background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container_tabuleiro{ width: 320px;   height: 360px;}
+
+.column{  display: flex;  flex-direction: row;    gap: 16px;}
+
+.btn_casa{
+    width: calc(300px / 3);
+    height: calc(300px / 3);
+    margin-bottom: 16px;
+    font-size: 48px;
+    font-weight: 600;
+    border-radius: 14px;
+    border: none;
+    box-shadow: 2px 8px 2px 0px rgb(0, 0, 0);
+    background: var(--btn_casa);
+}
+/* CSS placar e controle */
+.card_controll, .card_placar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 320px;
+}
+.card_controll{  margin-bottom: 10px;}
+
+.box_jogadores span{
+   font-size: 35px;
+   font-weight: 900;
+   font-family: Arial, Helvetica, sans-serif;
+   color: var(--bakleva);
+}
+.box_jogadores span:nth-child(1){ color: var(--maximun-blue-green);}
+
+/* CSS btn turn  */
+.btn_turn button{
+    border: none;
+    padding: 7px 25px;
+    font: 600 16px 'Arial';
+    border-radius: 5px;
+    background: var(--btn_casa);
+    box-shadow: 1px 2px 2px 0 black;
+    color: var(--winter-sky);
+}
+.btn_turn button:active{   transition: .1.5s ease-in-out; box-shadow: 0px 0px 0px 0;}
+
+.btn_turn button:hover{  transform: scale(1.1);}
+
+/* btn voltar */
+.btn_reset button{
+    background: var(--winter-sky);
+    padding: 6px;
+    border-radius: 5px;
+    box-shadow: 2px 5px 1px 0 var(--hoki);
+    border: none;
+    color: var(--background);
+}
+.btn_reset button:active{ transition: .1s ease-in-out;   box-shadow: 0px 0px 0px 0;}
+
+/* CSS placar */
+.card_placar div{
+    padding: 4px 10px;
+    height: 50px;
+    width: 90px;
+    border-radius: 10px;
+    /* alinhando os elementos no centro */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.card_placar div:nth-child(1){ background: var(--maximun-blue-green);}
+
+.card_placar div:nth-child(2){ background: var(--winter-sky);}
+
+.card_placar div:nth-child(3){ background: var(--bakleva);}
+
+.card_placar div p{  font: 700 11px 'Arial'; color: var(--background);   text-transform: uppercase;}
+
+.pontos{   font: 800 16px 'Arial';    color: var(--background);    margin-top: 3px;}
+
+#time {font: 600 18px 'Arial';}
+
+@media(max-width: 470px){
+    .box_mensagem h2{
+        font-size: 26px;
+    }
+    .box_mensagem button, .Card_Start div button{padding: 10px; font-size: 13px;}
+}
